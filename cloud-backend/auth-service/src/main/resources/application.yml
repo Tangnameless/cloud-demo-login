@@ -1,0 +1,19 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: auth-service
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+  datasource:
+    url: jdbc:mysql://localhost:3306/cloud_demo?useSSL=false
+    username: root
+    password: tyty123
+    driver-class-name: com.mysql.jdbc.Driver
+logging:
+  level:
+    cn.itcast: debug
+  pattern:
+    dateformat: MM-dd HH:mm:ss:SSS
+
