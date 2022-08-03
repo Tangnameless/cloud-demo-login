@@ -5,6 +5,7 @@ import com.example.user.pojo.User;
 import com.example.user.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -37,10 +38,10 @@ public class UserController { // 提供restful风格的接口
     public R<String> save(@RequestBody User user) {
         try{
             userService.save(user);
-            return R.success("新增用户成功");
-        } catch (Exception e){
+            return R.success("新增用户成功！");
+        } catch (DuplicateKeyException e){
             e.printStackTrace();
-            return R.error("新增用户成功");
+            return R.error("新增用户失败！用户名重复");
         }
     }
 }
