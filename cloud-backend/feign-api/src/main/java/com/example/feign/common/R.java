@@ -15,6 +15,8 @@ public class R<T> implements Serializable {
 
     private Integer code; //编码：1成功，0和其它数字为失败
 
+    private Integer success; //根据前端请求添加字段：1为登录成功，0为登录失败
+
     private String msg; //错误信息
 
     private T data; //数据
@@ -25,6 +27,7 @@ public class R<T> implements Serializable {
         R<T> r = new R<T>();
         r.data = object;
         r.code = 1;
+        r.success = 1;
         return r;
     }
 
@@ -32,6 +35,7 @@ public class R<T> implements Serializable {
         R r = new R();
         r.msg = msg;
         r.code = 0;
+        r.success = 0;
         return r;
     }
 
