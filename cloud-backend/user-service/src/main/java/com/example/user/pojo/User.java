@@ -11,7 +11,7 @@ public class User {
     @TableId(type = IdType.AUTO)
     private Long id;
 
-    private String username;
+    private String username; // 记得在mysql中设置唯一索引
 
     private String password;
 }
