@@ -46,7 +46,7 @@ cloud-backend
 
 
 
-![image-20220804091334328](README.assets/image-20220804091334328.png)
+![image-20220804120122127](README.assets/image-20220804120122127.png)
 
 蓝色为已完成模块
 
@@ -66,3 +66,4 @@ cloud-backend
 
 - [ ] 学习 Docker，微服务的部署部分
 - [ ] 基于 token 实现”真正“的登入和登出
+- [ ] 通过网关进行鉴权
