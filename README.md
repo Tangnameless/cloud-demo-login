@@ -60,7 +60,7 @@ cloud-backend
 
 接口文档详见：https://console-docs.apipost.cn/preview/5e57a19e88b1b9ec/d6fbaae0feb11505
 
-（==为便于在服务器上部署，修改了接口设计==）
+（**为便于在服务器上部署，修改了接口设计**）
 
 
 
@@ -267,7 +267,8 @@ ps -ef | grep java # 查看所有java进程
 
 
 
-**需要解决跨域问题！！！！**在后端进行设置
+**需要解决跨域问题**
+在后端(springcloud gateway)进行设置
 
 > 参考资料
 >
