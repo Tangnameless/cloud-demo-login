@@ -51,7 +51,8 @@ export default {
       //登录发送的post请求后端端口！！！
 
       this.axios
-        .post("http://localhost:10010/auth/login", this.loginForm)
+        .post("http://{your server ip}:80/api/auth/login", this.loginForm) 
+        //.post("http://localhost:10010/api/auth/login", this.loginForm)
         .then((resp) => {
           let data = resp.data;
           if (data.success) {

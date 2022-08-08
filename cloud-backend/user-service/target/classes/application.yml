@@ -15,10 +15,6 @@ spring:
   cloud:
     nacos:
       server-addr: localhost:8848
-mybatis:
-  type-aliases-package: cn.itcast.user.pojo
-  configuration:
-    map-underscore-to-camel-case: true
 logging:
   level:
     cn.itcast: debug

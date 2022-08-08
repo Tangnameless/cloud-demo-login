@@ -1,51 +1,26 @@
 <template>
   <div id="poster">
-    <el-form
-      :model="ruleForm"
-      :rules="rules"
-      ref="ruleForm"
-      label-width="0px"
-      lable-position="left"
-      class="register-container"
-    >
+    <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="0px" lable-position="left"
+      class="register-container">
       <h3 class="register_title">
         系统注册
         <el-button @click="toLogin()">去登录</el-button>
       </h3>
       <el-form-item label="" prop="loginName">
-        <el-input
-          type="text"
-          autocomplete="off"
-          v-model="ruleForm.loginName"
-          placeholder="请输入账号"
-          prefix-icon="el-icon-user-solid"
-        ></el-input>
+        <el-input type="text" autocomplete="off" v-model="ruleForm.loginName" placeholder="请输入账号"
+          prefix-icon="el-icon-user-solid"></el-input>
       </el-form-item>
       <el-form-item label="" prop="password">
-        <el-input
-          type="password"
-          v-model="ruleForm.password"
-          autocomplete="off"
-          placeholder="请输入密码"
-          prefix-icon="el-icon-lock"
-        ></el-input>
+        <el-input type="password" v-model="ruleForm.password" autocomplete="off" placeholder="请输入密码"
+          prefix-icon="el-icon-lock"></el-input>
       </el-form-item>
       <el-form-item label="" prop="checkPass">
-        <el-input
-          type="password"
-          v-model="ruleForm.checkPass"
-          autocomplete="off"
-          placeholder="请输入确认密码"
-          prefix-icon="el-icon-lock"
-        ></el-input>
+        <el-input type="password" v-model="ruleForm.checkPass" autocomplete="off" placeholder="请输入确认密码"
+          prefix-icon="el-icon-lock"></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button
-          type="primary"
-          style="background: #505458; border: none"
-          @click="submitForm('ruleForm')"
-          >注册</el-button
-        >
+        <el-button type="primary" style="background: #505458; border: none" @click="submitForm('ruleForm')">注册
+        </el-button>
         <el-button @click="resetForm('ruleForm')">重置</el-button>
       </el-form-item>
     </el-form>
@@ -95,7 +70,8 @@ export default {
       //注册发送的post请求后端端口！！！
 
       this.axios
-        .post("http://localhost:10010/auth/register", this.ruleForm)
+        .post("http://{your server ip}:80/api/auth/register", this.ruleForm)
+        //.post("http://localhost:10010/api/auth/register", this.ruleForm)
         .then((resp) => {
           let data = resp.data;
           if (data.success) {
@@ -148,6 +124,7 @@ export default {
   border: 1px solid #eaeaea;
   box-shadow: 0 0 25px #cacac6;
 }
+
 .register_title {
   margin: 0px auto 40px auto;
   text-align: center;
